@@ -45,5 +45,4 @@ rosrun line_sens line_follower_gui.py
 
 Ниже представлено видео захвата экрана во время запуска следования робота KUKA youBot по линии с помощью GUI.
 
-[![Следование робота по линии](https://raw.githubusercontent.com/Ignanastya/line_sens/main/video/screenshot.jpg)](https://raw.githubusercontent.com/Ignanastya/line_sens/main/video/demonstration.mp4)
-
+https://github.com/user-attachments/assets/ea9a39d1-3019-4cb6-89bb-7ebcfefe54bb
