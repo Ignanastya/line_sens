@@ -27,10 +27,10 @@ class RobotControlNode:
             angular_z = 0
             linear_x = 1
         elif (self.left_sens == 0 and self.right_sens == 1):
-            angular_z = 1
+            angular_z = -1
             linear_x = 0
         elif (self.left_sens == 1 and self.right_sens == 0):
-            angular_z = -1
+            angular_z = 1
             linear_x = 0
         else:
             angular_z = 0
@@ -49,7 +49,7 @@ class RobotControlNode:
         # Отправляем команду
         self.pub.publish(cmd)
 
-        rospy.loginfo(f"L={self.left_sens} R={self.right_sens} angle={angular_z:.3f}")
+        rospy.loginfo(f"left={self.left_sens} right={self.right_sens} turn={angular_z}")
             
 
 if __name__ == '__main__':

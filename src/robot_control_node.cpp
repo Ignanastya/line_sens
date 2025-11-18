@@ -33,19 +33,19 @@ public:
         left_sens_  = msg->data[0];
         right_sens_ = msg->data[1];
 
-        double angular_z = 0;
-        double linear_x = 0;
+        int angular_z = 0;
+        int linear_x = 0;
 
         if (left_sens_ == 1 && right_sens_ == 1){
             angular_z = 0;
             linear_x = 1;
         }
         else if (left_sens_ == 0 && right_sens_ == 1){
-            angular_z = 1;
+            angular_z = -1;
             linear_x = 0;
         }
         else if (left_sens_ == 1 && right_sens_ == 0){
-            angular_z = -1;
+            angular_z = 1;
             linear_x = 0;
         }
         else {
@@ -64,7 +64,7 @@ public:
 
         pub_.publish(cmd);
 
-        ROS_INFO("L=%d R=%d angle=%.3f", left_sens_, right_sens_, angular_z);
+        ROS_INFO("left=%d right=%d turn=%d", left_sens_, right_sens_, angular_z);
     }
 
     int getLeft()  const { return left_sens_; }
